@@ -24,5 +24,7 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-Route::get('users/export/', [UsersController::class, 'export']);
-Route::get('applications/export/', [ApplicationsController::class, 'export']);
+Route::get('users/export/', [UsersController::class, 'export'])->name('user_export');
+Route::get('users/export_chunked/', [UsersController::class, 'export_chunked'])->name('user_export_chunked');
+Route::get('applications/export/', [ApplicationsController::class, 'export'])->name('app_export');
+Route::get('applications/export_chunked/', [ApplicationsController::class, 'export_chunked'])->name('app_export_chunked');

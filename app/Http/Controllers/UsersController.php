@@ -10,8 +10,14 @@ class UsersController extends Controller
 {
     public function export()
     {
-        (new UsersExportChunk())->store('users_chunked.xlsx');
-        return Excel::download(new UsersExportChunk, 'users_chunked.xlsx');
-        //return Excel::download(new UsersExport, 'users.xlsx');
+        return Excel::download(new UsersExport, 'users.xlsx');
     }
+
+    public function export_chunked()
+    {
+        return (new UsersExportChunk())->download('users_chunked.xlsx');
+
+    }
+
+
 }

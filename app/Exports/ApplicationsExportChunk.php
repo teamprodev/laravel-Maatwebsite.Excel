@@ -12,9 +12,10 @@ use Maatwebsite\Excel\Concerns\FromQuery;
 use Maatwebsite\Excel\Concerns\WithMapping;
 use Yajra\DataTables\Exports\DataTablesCollectionExport;
 
-class ApplicationsExportChunk extends DataTablesCollectionExport implements FromQuery, ShouldQueue, WithMapping
+class ApplicationsExportChunk extends DataTablesCollectionExport implements FromQuery, WithMapping
     {
     use Exportable;
+
     public function query()
     {
         return Application::query();

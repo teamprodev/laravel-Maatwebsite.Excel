@@ -11,7 +11,7 @@ use Maatwebsite\Excel\Concerns\FromQuery;
 use Maatwebsite\Excel\Concerns\WithMapping;
 use Yajra\DataTables\Exports\DataTablesCollectionExport;
 
-class UsersExportChunk extends DataTablesCollectionExport implements FromQuery, ShouldQueue, WithMapping
+class UsersExportChunk extends DataTablesCollectionExport implements FromQuery, WithMapping
     {
     use Exportable;
     public function query()
